@@ -17,7 +17,7 @@
          <img src="{% static 'img/logo 2.png'%}" alt="login image" class="login__img">
 
         
-         <form action="/index" class="login__form" method="post">
+         <form action="verify"  class="login__form" method="post">
 
             {% csrf_token %}
             
@@ -69,7 +69,8 @@
               {% endfor %}
             </ul>
             {% endif %}
-            
+            <span id="emailError" class="error"></span>
+        <br><br>
             <p class="login__register">
                Already have an account? <a href="login" id="login">Login</a>
             </p>
@@ -78,5 +79,34 @@
       
       <!--=============== MAIN JS ===============-->
       <script src="{% static 'js/register.js' %}"></script>
+      <script>
+         function validateForm(event) {
+             event.preventDefault(); // Prevent form submission
+ 
+             // Clear previous error message
+             document.getElementById("emailError").textContent = "";
+ 
+             // Get form input value
+             let email = document.getElementById("email").value;
+ 
+             // Validate email
+             if (email === "") {
+                 document.getElementById("emailError").textContent = "Email is required";
+                 return false;
+             } else if (!isValidEmail(email)) {
+                 document.getElementById("emailError").textContent = "Invalid email format";
+                 return false;
+             }
+ 
+             // Form is valid, submit it
+             document.getElementById("myForm").submit();
+         }
+ 
+         function isValidEmail(email) {
+             // Regular expression for email validation
+             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+             return emailRegex.test(email);
+         }
+     </script>
    </body>
 </html>
