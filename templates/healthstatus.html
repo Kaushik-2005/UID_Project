@@ -1,0 +1,205 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health status</title>
+    <link href="{% static 'css/healthstatus.css' %}" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="nav">
+        <ul>
+          <li>
+            <div class="image1">
+              <img
+                id="med-kit"
+                src="{% static 'img/med-kit.png' %}"
+                alt="med-kit"
+              />
+              <div class="icon-hover-box">Naughty America</div>
+            </div>
+          </li>
+          <li>
+            <div class="image1">
+              <img id="time" src="{% static 'img/time.png' %}" alt="time" />
+            </div>
+          </li>
+          <li>
+            <div class="image1">
+              <img id="book" src="{% static 'img/book.png' %}" alt="book" />
+            </div>
+          </li>
+          <li>
+            <div class="image1">
+              <img id="pulse" src="{% static 'img/pulse.png' %}" alt="pulse" />
+            </div>
+          </li>
+          <li>
+            <div class="image1">
+              <img id="menu" src="{% static 'img/menu.png' %}" alt="menu" />
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- <div class="page"> -->
+        <div class="info">
+          <h1 style="text-align: center">Case-No:17B3C9X7</h1>
+
+          <div class="container">
+            <div id="diag">
+              <h2>Diagnosis</h2>
+              <p style="font-size: large">Bardycardia</p>
+              <img
+                id="bm"
+                src="{% static 'img/bard.png' %}"
+                alt="Bardycardia Disease"
+              />
+            </div>
+            <div id="oxygen">
+              <h2>Oxygen</h2>
+              <p style="font-size: large">Last Visit</p>
+              <p id="rb">93%</p>
+            </div>
+          </div>
+
+          <div class="container">
+            <div id="rbc">
+              <h2>Red Blood Cells</h2>
+              <p id="rb">137</p>
+              <p id="mm">mmol/L</p>
+            </div>
+            <div id="pressure">
+              <h2>Pressure</h2>
+              <p id="rb">100/64</p>
+              <p id="mm">mmHg</p>
+            </div>
+          </div>
+
+          <div class="container">
+            <div id="mri">
+              <h2>Heart MRI</h2>
+              <img id="hm" src="{% static 'img/heart.jpeg' %}" />
+            </div>
+            <div id="medi">
+              <h2>Medication</h2>
+              <p id="mm"><b>Metformin</b></p>
+              <p id="mm">150 mg</p>
+            </div>
+          </div>
+        </div>
+        <div class="image">
+          <img src="{% static 'img/h2.jpg' %}" alt="human" />
+          <div class="box-1">
+            <h2>Cardio Vascular</h2>
+            <p id="rb">Aortic Dissection</p>
+            <p id="mm">STAGE-3</p>
+          </div>
+
+          <div class="box-2">
+            <h2>Alfred J.P</h2>
+            <p id="mm">Male,74</p>
+            <button id="hist">Full History</button>
+          </div>
+          <div class="box-3">
+            <p id="mmm">Action Plan</p>
+            <div class="container">
+              <div id="hist1">
+                Cardiograph
+                <img
+                  id="bmx"
+                  src="{% static 'img/2JL7.gif' %}"
+                  alt="Bardycardia Disease"
+                />
+                Heart beat is stable
+              </div>
+              <div id="hist1">
+                Blood Test
+                <img
+                  id="bmx"
+                  src="{% static 'img/blood.jpg' %}"
+                  alt="Bardycardia Disease"
+                />
+                results are fine
+              </div>
+            </div>
+            <div class="container">
+              <div id="hist2">
+                Valocordin
+                <button id="plusVal">+</button>
+                <p id="buttVal">150</p>
+                <p id="mm">mg</p>
+                <button id="minusVal">-</button>
+              </div>
+              <div id="hist2">
+                Merformin
+                <button id="plusMet">+</button>
+                <p id="buttMet">100</p>
+                <p id="mm">mg</p>
+                <button id="minusMet">-</button>
+              </div>
+            </div>
+            <button id="hists">Submit Documents</button>
+          </div>
+        </div>
+      <!-- </div>  -->
+    </div>
+  </body>
+  <script>
+    function handleButtonClick(operation, elementId) {
+      const valueElement = document.getElementById(elementId);
+      let value = parseInt(valueElement.textContent);
+
+      if (operation === "+") {
+        value++;
+      } else if (operation === "-" && value > 0) {
+        value--;
+      }
+
+      valueElement.textContent = value;
+    }
+
+    // Attach event listeners to the plus and minus buttons for Red Blood Cells
+    document.getElementById("plusVal").addEventListener("click", function () {
+      handleButtonClick("+", "buttVal");
+    });
+
+    document.getElementById("minusVal").addEventListener("click", function () {
+      handleButtonClick("-", "buttVal");
+    });
+
+    // Attach event listeners to the plus and minus buttons for Metformin
+    document.getElementById("plusMet").addEventListener("click", function () {
+      handleButtonClick("+", "buttMet");
+    });
+
+    document.getElementById("minusMet").addEventListener("click", function () {
+      handleButtonClick("-", "buttMet");
+    });
+    document.getElementById("med-kit").addEventListener("click", function () {
+      alert("All medictions are prescribed");
+    });
+    document.getElementById("time").addEventListener("click", function () {
+      alert("Today appointment at 10.00 am");
+    });
+
+    document.getElementById("book").addEventListener("click", function () {
+      alert("Further Registrations timings : 7.00pm - 8.00pm");
+    });
+
+    document.getElementById("pulse").addEventListener("click", function () {
+      alert("Pulse and heartbeat stable");
+    });
+
+    document.getElementById("menu").addEventListener("click", function () {
+      alert("Your data is updated daily");
+    });
+    document.getElementById("hists").addEventListener("click", function () {
+      alert("Documents are submitted");
+    });
+  </script>
+</html>

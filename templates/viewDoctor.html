@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== REMIXICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="shortcut icon" href="{% static 'img/logo 3.png' %}" type="image/x-icon">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="{% static 'css/viewDoctor.css' %}">
+
+        <title>MedEase-Doctors</title>
+    </head>
+    <body>
+        <header class="header">
+            <a href="{% url 'index' %}" class="back__home">
+                <i class="ri-arrow-left-line"></i>Back to home
+            </a>
+        </header>
+
+
+        <div class="container">
+            {% for doctor in doctors %}
+            <!-- Card -->
+            <div class="card">
+                <div class="card__border">
+                    <div class="card__perfil">
+                        <img src="{{doctor.cardimg.url}}" alt="card image" class="card__img">
+                    </div>
+                </div>
+
+                <h3 class="card__name">{{ doctor.cardname }}</h3>
+                <span class="card__profession">{{ doctor.cardprofession }}</span>
+
+                <!-- Card info -->
+                <div class="info">
+                    <div class="info__icon">
+                        <i class="ri-information-line"></i>
+                    </div>
+
+                    <div class="info__border">
+                        <div class="info__perfil">
+                            <img src="{{doctor.infoimg.url}}" alt="card image" class="info__img">
+                        </div>
+                    </div>
+
+                    <div class="info__data">
+                        <h3 class="info__name">{{doctor.infoname}}</h3>
+                        <span class="info__profession">{{doctor.infoprofession}}</span>
+                        <span class="info__location">{{doctor.infolocation}}</span>
+                    </div>
+
+                    <div class="info__social">
+
+                        <a href="{{doctor.infomail}}" target="_blank" class="info__social-link">
+                            <span class="info__social-icon">
+                                <i class="ri-mail-fill"></i>
+                            </span>
+                        </a>
+
+                        <a href="{{doctor.infophone}}" target="_blank" class="info__social-link">
+                            <span class="info__social-icon">
+                                <i class="ri-phone-fill"></i>
+                            </span>
+                        </a>
+
+                        <a href="/appointment?doc={{doctor.infoname}}" target="_blank" class="info__social-link">
+                            <span class="info__social-icon">
+                                <i class="ri-calendar-todo-fill"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}  
+        </div>
+    </body>
+</html>

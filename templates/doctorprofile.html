@@ -1,0 +1,112 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'img/logo 3.png' %}"
+      type="image/x-icon"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Join Community</title>
+
+    <link rel="stylesheet" href="{% static '/css/doctorprofile.css'%}" />
+  </head>
+
+  <body>
+    <section class="background">
+      <img
+        src="{% static '/img/logo 2.png'%}"
+        alt="login image"
+        class="login__img"
+      />
+      <div class="registration_form">
+        <form action="/index" method="post"  enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form_wrap">
+            <div class="input_grp">
+              <div class="input_wrap">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="docname" />
+              </div>
+              <div class="input_wrap">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="doclname"/>
+              </div>
+            </div>
+            <div class="input_wrap">
+              <label for="email">Email Address</label>
+              <input type="text" id="email" name="email" />
+            </div>
+
+            <div class="input_wrap">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone"/>
+            </div>
+
+            <div class="input_wrap">
+              <label for="doctype">What is your specialization?</label>
+              <select id="doctype" name="doctype">
+                <option value="Cardiologist">Cardiologist</option>
+                <option value="Neurologist">Neurologist</option>
+                <option value="ENT_Doctor">ENT</option>
+                <option value="Orthopedician">Orthopedician</option>
+                <option value="Dentist">Dentist</option>
+                <option value="Pediatrician">Pediatrician</option>
+
+                <!-- Add more specialization options here -->
+              </select>
+            </div>
+
+            <div class="input_wrap">
+              <label for="description">Expertise (Sub Designation in your field) </label>
+              <textarea
+                id="description"
+                name="expertise"
+                rows="2"
+                cols="40"
+              ></textarea>
+            </div>
+            <div class="input_wrap">
+              <label for="bio">Education and Practice</label>
+              <textarea
+                id="bio"
+                name="education"
+                rows="4"
+                cols="40"
+              ></textarea>
+            </div>
+
+            <div class="input_wrap">
+              <label for="location">Location of Practice</label>
+              <input type="text" id="location" name="location"/>
+            </div>
+
+            <div class="input_wrap">
+              <label for="image">Choose an image:</label>
+              <input type="file" id="image" name="image" />
+            </div>
+            <br />
+
+            {% if messages %}
+            <ul class="messages">
+              {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+
+            <div class="input_wrap">
+              <input type="submit" value="Register Now" class="submit_btn" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

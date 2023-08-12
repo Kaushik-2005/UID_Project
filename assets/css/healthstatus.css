@@ -1,0 +1,351 @@
+.body {
+    background-color: aliceblue;
+
+}
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serifs;
+}
+img
+{
+    height:750px ;
+    width:600px;
+    justify-content: center;
+    margin-left: 60px;
+}
+.main,.container
+{
+   display :flex;
+  flex-direction : row; 
+}
+.image
+{
+display : flex;
+flex-direction : row;
+
+}
+.main
+{
+    background-color: whitesmoke;
+
+}
+.drop-down 
+{
+    box-shadow: 10px 0px 15px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width:10%;
+    padding: 20px;
+    border-radius:85px;
+    height: 710px;
+    background:aliceblue;
+    margin-right: 40px;
+}
+.info 
+{
+    /* border-radius: 25px; */
+    width: 500px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height:750px ;
+    background-color:white;
+    box-shadow: 10px 0px 15px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.info div{
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.image 
+{
+    align-items: center;  
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height:750px ;
+    width:750px;
+    background-color: white;
+    box-shadow: 20px 0px 15px;
+    display:flex;
+}
+@media screen and (max-width: 768px) {
+    .container,.image,.box-1,.box-2,.box-3{
+        flex-direction: column;
+  }
+}
+ .box-1 {
+            position :relative;
+            top: -150px;
+            right: 625px;
+            width: 6cm;
+            height: 5cm;
+            background-color: aliceblue;
+            border-radius: 10px;
+} 
+.box-2 {
+            position: relative;
+            top: 150px;
+            right: 835px;
+            width: 6cm;
+            height: 5cm;
+            background-color: aliceblue;
+            border-radius: 10px;
+            
+}
+
+.box-3 {
+            position: relative;
+            bottom: 3%;
+            right: 700px;
+            width: 10cm; 
+            height: 15cm;
+            border-radius: 10px; 
+            background-color: rgba(128, 128, 128,0.7);
+ }
+
+#diag,#oxygen
+{
+
+    width: 200px;
+    height: 200px;
+    background-color:aliceblue;
+    /* margin-right: 15px;
+    margin-left: 20px; */
+    border-radius: 25px;
+}
+
+#rbc,#pressure
+{
+    /* margin-top: 20px; */
+    width: 200px;
+    height: 200px;
+    background-color: aliceblue;
+    /* margin-right: 15px;
+    margin-left: 30px; */
+    border-radius: 25px;
+}
+
+#mri,#medi
+{
+    /* margin-top: 20px; */
+    width: 200px;
+    height: 200px;
+    background-color: aliceblue;
+    /* margin-right: 15px;
+    margin-left: 20px; */
+    border-radius: 25px;
+}
+
+h2,p{
+    margin-left: 20px;
+}
+#rb,#buttMet,#buttVal,#butt
+{
+    text-align: right;
+    margin-right: 30px;
+    font-size:37px; 
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+#mm
+{
+    font-size:20px; 
+    margin-top: 2px;
+    text-align: right;
+    margin-right: 30px;
+    margin-bottom: 7px;
+}
+#mmm
+{
+    font-size:20px; 
+    margin-top: 2px;
+    text-align: left;
+    margin-right: 30px;
+    margin-bottom: 7px;
+    color:white;
+}
+#hm
+{
+    margin-left: 20px;
+    width: 160px;
+    height:110px;
+    border-radius: 25px;
+}
+#bm
+{
+    margin-left: 20px;
+    width: 160px;
+    height:90px;
+   border-radius: 15px;
+   /* margin-bottom: 5px; */
+}
+#bmx
+{
+    margin-left: 5px;
+    margin-top:20px;
+    width: 120px;
+    height:60px;
+    border-radius: 15px;
+   /* margin-bottom: 5px; */
+}
+ /* #us
+{
+    width:70px;
+    height: 70px;
+    border-radius: 50%;
+   text-align: left;
+}
+#name
+{
+    
+    margin-top: 590px;
+    margin-left:120px;
+    width:250px;
+    height: 150px;
+    border-radius: 50px;
+    background-color: black;
+    color: brown;
+
+}*/
+#hist
+{
+    text-align: center;
+    color: black;
+    margin-top: 20px;
+    margin-left:15px; 
+    width:200px;
+    height:50px;
+    background-color: lightgreen;
+    border-radius: 30px;
+}
+#hists
+{
+    align:center;
+    text-align: center;
+    color: black;
+    margin-top: 20px;
+    margin-left:70px; 
+    width:200px;
+    height:50px;
+    background-color: skyblue;
+    border-radius: 30px;
+}
+#plusVal
+{
+    text-align: center;
+    font-size:30px;
+    color: black;
+    margin-top: 20px;
+    margin-left:1px; 
+    width:130px;
+    height:40px;
+    background-color:grey;
+    border-radius: 30px;
+}
+#plusMet
+{
+    text-align: center;
+    font-size:30px;
+    color: black;
+    margin-top: 20px;
+    margin-left:1px; 
+    width:130px;
+    height:40px;
+    background-color:grey;
+    border-radius: 30px;
+}
+#minusMet
+{
+    text-align: center;
+    font-size:30px;
+    color: black;
+    margin-top: 20px;
+    margin-left:1px; 
+    width:130px;
+    height:40px;
+    background-color:grey;
+    border-radius: 30px;
+}
+#minusVal
+{
+    text-align: center;
+    font-size:30px;
+    color: black;
+    margin-top: 20px;
+    margin-left:1px; 
+    width:130px;
+    height:40px;
+    background-color:grey;
+    border-radius: 30px;
+}
+#hist1
+{
+    text-align: center;
+    color: black;
+    margin-top: 20px;
+    margin-left:13px; 
+    width:150px;
+    height:150px;
+    background-color:rgba(128, 128, 128,0.7);
+    border-radius: 30px;
+}
+#hist2
+{
+    text-align: center;
+    color: black;
+    margin-top: 20px;
+    margin-left:13px; 
+    width:150px;
+    height:250px;
+    background-color:rgba(128, 128, 128,0.7);
+    border-radius: 30px;
+}
+.nav
+{
+    /* margin-top: 30px; */
+    width:10%;
+    padding:3px;
+    background-color:#fdfdfd;
+    border-radius: 20px;
+    height:100%;
+    margin-left:0px;
+    margin-right: 20px;
+
+}
+.nav li{
+    margin-top:70px;
+    list-style-type:none;
+    padding:7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform:translateX(-50%);
+    width:200px;
+}
+#di,#med-kit,#time,#book,#menu,#pulse
+{
+    width:40px;
+    height:40px;
+    padding:4px;
+}
+#di:hover,#med-kit:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+.icon-hover-box{
+    
+    position: absolute;
+    background-color: black;
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    display: none;
+}
+

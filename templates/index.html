@@ -1,0 +1,309 @@
+{% load static %}
+
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="shortcut icon" href="{% static 'img/logo 3.png' %}" type="image/x-icon">
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+      <link rel="stylesheet" href="{% static 'css/styles.css'%} ">
+      <title>MedEase</title>
+   </head>
+   <body>
+      <header class="header" id="header">
+         <nav class="nav container">
+            <a href="#" class="nav__logo" style="font-size: 2vw;">
+               Med<span>Ease</span>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+               <ul class="nav__list">
+                  <li class="nav__item">
+                     <a href="#about" class="nav__link">About</a>
+                  </li>
+                  <li class="nav__item">
+                     <a href="#services" class="nav__link">Services</a>
+                  </li>
+                  <li class="nav__item">
+                     <a href="#doctors" class="nav__link">Doctors</a>
+                  </li>
+                  <li class="nav__item">
+                     <a href="#contact" class="nav__link">Contact us</a>
+                  </li>
+
+                  {% if user.is_authenticated %}
+                  
+                  <li>
+                     <a href="/accounts/logout" class="nav__link">Logout</a>
+                  </li>
+                  <li style="color: aqua; font-size: 1.25vw">
+                     Hi, {{user.username}}
+                  </li>
+
+
+                  {% else %}
+                  <li class="nav__item">                  
+                     <a href="/accounts/login" class="nav__link">Login/Signup</a>
+                  </li>
+                  {% endif %}
+
+               </ul>
+
+               <div class="nav__close" id="nav-close">
+                  <i class="ri-close-line"></i>
+               </div>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+               <i class="ri-menu-line"></i>
+            </div>
+         </nav>
+      </header>
+
+      <main class="main">
+         <section class="home section" id="home">
+            <div class="home__container container grid">
+               <div class="home__content">
+                  <div class="home__data">
+                     <h3 class="home__subtitle">
+                        Welcome <span>to,</span>
+                     </h3>
+
+                     <h1 class="home__title">
+                        MedEase
+                     </h1>
+
+                     <p class="home__description">
+                        Find doctors nearby you with our help.
+                     </p>
+                     <br>
+                     <a href="#contact" class="button">Let's Talk</a>
+                  </div>
+
+               </div>
+
+               <div class="home__image">
+                  <svg class="home__blob" viewBox="0 0 550 591" xmlns="http://www.w3.org/2000/svg">
+                     <mask id="maskBlob" mask-type="alpha">
+                        <path d="M263 47.1782C270.426 42.891 279.574 42.891 287 47.1782L501.157 
+                        170.822C508.583 175.109 513.157 183.032 513.157 191.606V438.894C513.157 
+                        447.468 508.583 455.391 501.157 459.678L287 583.322C279.574 587.609 270.426 
+                        587.609 263 583.322L48.843 459.678C41.4174 455.391 36.843 447.468 36.843 
+                        438.894V191.606C36.843 183.032 41.4174 175.109 48.843 170.822L263 47.1782Z"/>
+                     </mask>
+                     <g mask="url(#maskBlob)">
+                        <path d="M263 47.1782C270.426 42.891 279.574 42.891 287 47.1782L501.157 
+                        170.822C508.583 175.109 513.157 183.032 513.157 191.606V438.894C513.157 
+                        447.468 508.583 455.391 501.157 459.678L287 583.322C279.574 587.609 270.426 
+                        587.609 263 583.322L48.843 459.678C41.4174 455.391 36.843 447.468 36.843 
+                        438.894V191.606C36.843 183.032 41.4174 175.109 48.843 170.822L263 47.1782Z"/>
+                  
+                        <rect x="37" width="476" height="630" fill="url(#pattern0)"/>
+                     </g>
+                  
+                     <rect x="37" width="476" height="300" fill="url(#pattern1)"/>
+                  
+                     <defs>
+                        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                           <use href="#imageBlob" transform="matrix(0.00143057 0 0 0.00108108 0.0404062 0)"/>
+                        </pattern>
+                  
+                        <pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
+                           <use href="#imageBlob" transform="matrix(0.00143057 0 0 0.00226984 0.0404062 0)"/>
+                        </pattern>
+                  
+                        <!-- Insert your profile (recommended size: 640 x 940) -->
+                        <image class="home__img" id="imageBlob" width="640" height="925" href="{% static 'img/logo 3.png' %}"/>
+                     </defs>
+                  </svg>
+               </div>
+            </div>
+         </section>
+
+         <section class="about section" id="about">
+            <div class="about__container container grid">
+               <div class="about__data">
+                  <h2 class="section__title">
+                     About us
+                  </h2>
+
+                  <p class="about__description">
+                     Welcome to our medical website, where we strive to provide reliable and up-to-date information on various health topics. Our mission is to empower individuals with knowledge, promote wellness, and foster a healthier society through accessible and trustworthy medical resources.                  </p>
+
+                  <a href="#contact" class="button">Contact Us</a>
+               </div>
+
+               <div class="about__image">
+                  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                  <lottie-player class="about__blob" src="https://lottie.host/52a45711-7f4a-455c-b25a-3fab270e8558/ZYkzRSNoed.json"  speed="1" style="width: 350px; height: 350px" loop autoplay mode="normal"></lottie-player>
+               </div>
+            </div>
+         </section>
+
+         <section class="services section" id="services">
+            <h2 class="section__title">
+               Our <span>Services</span>
+            </h2>
+
+            <div class="services__container container grid">
+               <a href="#doctors"><article class="services__card">
+                  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                  <lottie-player class="services__icon" src="https://lottie.host/f6e62d27-b3b0-4190-b4b1-8d38f63f49ea/2FWnTlV84X.json" background="transparent" speed="1" style="width: 250px; height: 250px" loop autoplay mode="normal"></lottie-player>
+                  <h2 class="services__title">Find nearby doctors</h2>
+                  <p class="services__description">
+                     Discover comprehensive information about doctors you wish to consult, including their specialties, qualifications, and patient reviews, to make informed healthcare decisions
+                  </p>
+               </article></a>
+               <a href="#doctors">
+               <article class="services__card"> 
+                  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                  <lottie-player src="https://lottie.host/c9b225e7-eff6-48e6-8887-d07d9f0f408f/ldGislzmFP.json" background="transparent" speed="1" style="width: 250px; height: 250px" loop autoplay mode="normal"></lottie-player>
+                  <h2 class="services__title">Contact doctors</h2>
+                  <p class="services__description">
+                     Seamlessly connect with your chosen healthcare professionals through our platform, facilitating easy appointment scheduling and communication for your medical needs
+                  </p>
+               </article>
+               </a>
+               <a href="healthstatus">
+               <article class="services__card">
+                  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                  <lottie-player class="services__icon" src="https://lottie.host/2ca2be28-3189-4d8c-8880-6967f331fb3e/g5JtONaPZa.json" background="transparent" speed="1" style="width: 250px; height: 250px" loop autoplay mode="normal"></lottie-player>
+                  <h2 class="services__title">Check your health</h2>
+                  <p class="services__description">
+                     Monitor and track your personal health status with our user-friendly tools, empowering you to stay informed and proactive about your well-being.
+                  </p>
+               </article>
+               </a>
+            </div>
+         </section>
+
+         <section class="doctors section" id="doctors">
+            <h2 class="section__title">
+               <span>Doctors</span>
+            </h2>
+
+            <div class="doctors__container container grid">
+               <article class="doctors__card">
+                  <img src="{% static 'img/project-img-1.avif' %}" alt="Doctor Type" class="doctors__img">
+                  <div class="doctors__modal">
+                     <h2 class="doctors__title">Cardiologist</h2>
+                     <a href="{% url 'cardiologists' %}" class="doctors__button">
+                        View Doctors<i class="ri-external-link-line"></i>
+                     </a>
+                  </div>
+               </article>
+
+               <article class="doctors__card">
+                  <img src="{% static 'img/project-img-2.avif' %}" alt="Doctor Type" class="doctors__img">
+                  <div class="doctors__modal">
+                     <h2 class="doctors__title">Dentist</h2>
+                     <a href="{% url 'dentists' %}" class="doctors__button">
+                        View Doctors<i class="ri-external-link-line"></i>
+                     </a>
+                  </div>
+               </article>
+
+               <article class="doctors__card">
+                  <img src="{% static 'img/project-img-3.avif' %}" alt="Doctor Type" class="doctors__img">
+                  <div class="doctors__modal">
+                     <h2 class="doctors__title">Orthopedicians</h2>
+                     <a href="{% url 'orthopaedicians' %} "class="doctors__button">
+                        View Doctors<i class="ri-external-link-line"></i>
+                     </a>
+                  </div>
+               </article>
+
+               <article class="doctors__card">
+                  <img src="{% static 'img/project-img-4.avif' %}" alt="Doctor Type" class="doctors__img">
+                  <div class="doctors__modal">
+                     <h2 class="doctors__title">Neurologists</h2>
+                     <a href="{% url 'neurologists' %}" class="doctors__button">
+                        View Doctors<i class="ri-external-link-line"></i>
+                     </a>
+                  </div>
+               </article>
+
+               <article class="doctors__card">
+                  <img src="{% static 'img/project-img-5.avif' %}" alt="Doctor Type" class="doctors__img">
+                  <div class="doctors__modal">
+                     <h2 class="doctors__title">ENT Doctors</h2>
+                     <a href="{% url 'ents' %} "class="doctors__button">
+                        View Doctors<i class="ri-external-link-line"></i>
+                     </a>
+                  </div>
+               </article>
+
+               <article class="doctors__card">
+                  <img src="{% static 'img/project-img-6.avif' %}" alt="Doctor Type" class="doctors__img">
+                  <div class="doctors__modal">
+                     <h2 class="doctors__title">Pediatricians</h2>
+                     <a href="{% url 'pediatricians' %} "class="doctors__button">
+                        View Doctors<i class="ri-external-link-line"></i>
+                     </a>
+                  </div>
+               </article>
+            </div>
+         </section>
+
+         <section class="contact section" id="contact">
+            <h3 class="section__subtitle">
+               Get In <span>Touch</span>
+            </h3>
+            <h2 class="section__title">
+               Contact Us
+            </h2>
+            <div class="contact__container container grid">
+               <form action="" class="contact__form" id="contact-form">
+                  <div class="contact__group">
+                     <input type="text" name="user_name" required  placeholder="Enter your name" class="contact__input">
+                     <input type="email" name="email" required  placeholder="Enter your email" class="contact__input">
+                  </div>
+
+                  <textarea name="user__doctor" required placeholder="Enter your message" class="contact__input"></textarea>
+
+                  <p class="contact__message" id="contact-message"> </p>
+
+                  <button type="submit" class="button contact__button">
+                     Send Message
+                  </button>
+               </form>
+            </div>
+         </section>
+      </main>
+      <footer class="footer">
+         <div class="footer__container container grid">
+            <div>
+               <h1 class="footer__title">
+                  Med<span>Ease</span>
+               </h1>
+               <h2 class="footer__description">
+                  Find Nearby Docs
+               </h2>
+            </div>
+            <div class="footer__social">
+               <a href="https://lokeshyarramallu.github.io/LOKESH/" target="_blank" class="footer__social-link" rel="noopener">
+                  <i class="ri-user-3-line"></i>
+               </a>
+               <a href="https://github.com/LokeshYarramallu" target="_blank" class="footer__social-link" rel="noopener"> 
+                  <i class="ri-user-2-line"></i>
+               </a>
+
+               </a>
+            </div>
+            <span class="footer__copy">
+               &#169; Copyright2023 @MedEase. All rights reserved
+            </span>
+         </div>
+      </footer>
+
+      <a href="#home" class="scrollup" id="scroll-up">
+         <i class="ri-arrow-up-line"></i>
+      </a>
+      
+      <!-- <script src="https://kit.fontawesome.com/ca6315cbad.js" crossorigin="anonymous"></script> -->
+      <script src="{% static 'js/scrollreveal.min.js' %}"></script>
+      <script src="http://cdn.jsdelvir.net/npm/@emailjs/browser@3/dist/email.min.js' %}"></script>
+      <script src="{% static 'js/main.js' %}"></script>
+   </body>
+</html

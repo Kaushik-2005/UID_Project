@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedEase</title>
+    <link rel="shortcut icon" href="{% static 'img/logo 3.png' %}" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/landingpage.css' %}">
+</head>
+
+<body>
+    <section class="home section" id="home">
+        <div class="home__container container grid">
+            <div class="home__content">
+                <div class="home__data">
+                    <h3 class="home__subtitle">
+                        Welcome <span>to,</span>
+                    </h3>
+
+                    <h1 class="home__title">
+                        Med<span>Ease</span>
+                    </h1>
+
+                    <p class="home__description">
+                        Find doctors nearby you with our help.
+                    </p>
+                    <br>
+                </div>
+            </div>
+
+            <div class="home__image">
+                <div class="home__blob">
+                    <h2 class="home__subtitle">
+                        Are you
+                    </h2>
+                    <br>
+                    <a href="index" class="button">
+                        <h1 class="home__title">
+                            an <span class="user__type">User?</span>
+                        </h1>
+                    </a>
+                    <br>
+                    <h2 class="home__subtitle">
+                        or,
+                    </h2>
+                    <br>
+                    <a href="doctorprofile" class="button">
+                        <h1 class="home__title">
+                            a <span class="user__type">Doctor?</span>
+                        </h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{% static 'js/scrollreveal.min.js'%}"></script>
+    <script src="{% static 'js/landing.js'% } "></script>
+</body>
+
+</html>

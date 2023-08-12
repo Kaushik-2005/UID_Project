@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --first-color: hsl(162, 100%, 40%);
+    --first-color-alt: hsl(162, 56%, 35%);
+    --title-color: hsl(228, 8%, 95%);
+    --text-color: hsl(228, 8%, 65%);
+    --body-color: hsl(228, 15%, 20%);
+    --container-color: hsl(228, 15%, 15%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body,
+input,
+button {
+    font-size: var(--normal-font-size);
+    font-family: var(--body-font);
+}
+
+body {
+    background-image: linear-gradient(100deg, var(--first-color), var(--container-color));
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.background {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.login__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+}
+
+.registration_form {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 2rem;
+    font-weight: 1000;
+    width: 400px;
+}
+
+.form_wrap .input_grp{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form_wrap .input_grp .input_wrap{
+    width: calc(50% - 10px);
+    margin-bottom: 15px;
+}
+
+.form_wrap .input_grp input[type="text"] {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form_wrap input[type="text"] {
+    width: 100%;
+    border-radius: 3px;
+    border: 1.3px solid #9597a6;
+    padding: 10px;
+    outline: none;
+}
+
+.form_wrap input[type="text"]:focus {
+    border-color: #063abd;
+}
+
+.form_wrap .input_grp input[type="tel"] {
+    width: 165px;
+}
+
+.form_wrap input[type="tel"] {
+    width: 100%;
+    border-radius: 3px;
+    border: 1.3px solid #9597a6;
+    padding: 10px;
+    outline: none;
+}
+
+.form_wrap input[type="tel"]:focus {
+    border-color: #063abd;
+}
+
+.form_wrap .input_wrap label {
+    display: block;
+    margin-bottom: 3px;
+    color: #1a1a1f;
+}
+
+.form_wrap .input_wrap select {
+    width: 100%;
+    border-radius: 3px;
+    border: 1.3px solid #9597a6;
+    padding: 10px;
+    outline: none;
+}
+
+.form_wrap .input_wrap select:focus {
+    border-color: #063abd;
+}
+
+.form_wrap .submit_btn {
+    width: 100%;
+    background: var(--body-color);
+    padding: 10px;
+    border: 0;
+    color: white;
+    font-size: 17px;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.form_wrap .submit_btn:hover {
+    background: var(--container-color);
+}
+
+@media screen and (max-width: 400px) {
+    .registration_form {
+        width: 90%;
+    }
+
+    .input_grp {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form_wrap .input_grp input[type="text"] {
+        width: 214%;
+    }
+}
