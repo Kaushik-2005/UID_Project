@@ -1,77 +1,136 @@
 {% load static %}
 
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="shortcut icon" href="{% static 'img/logo 3.png' %}" type="image/x-icon">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'img/logo 3.png' %}"
+      type="image/x-icon"
+    />
 
-      <!--=============== REMIXICONS ===============-->
-      <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!--=============== REMIXICONS ===============-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
 
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="{% static 'css/login.css'%}">
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="{% static 'css/login.css'%}" />
 
-      <title>Login</title>
-   </head>
-   <body>
-      <div class="login">
-         <img src="{% static 'img/logo 2.png'%}" alt="login image" class="login__img">
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="login">
+      <img
+        src="{% static 'img/logo 2.png'%}"
+        alt="login image"
+        class="login__img"
+      />
 
-         <form action="login" class="login__form" method="post">
+      <form
+      name="loginForm"
+       onsubmit="return validateForm()"
+        action="login"
+        class="login__form"
+        method="post"
+      >
+        {% csrf_token %}
 
-            {% csrf_token %}
+        <h1 class="login__title">Login</h1>
 
-            <h1 class="login__title">Login</h1>
+        <div class="login__content">
+          <div class="login__box">
+            <i class="ri-user-3-line login__icon"></i>
 
-            <div class="login__content">
-               <div class="login__box">
-                  <i class="ri-user-3-line login__icon"></i>
-
-                  <div class="login__box-input">
-                     <input type="name" name="username" required class="login__input" placeholder=" ">
-                     <label for="username" class="login__label">Username</label>
-                  </div>
-               </div>
-
-               <div class="login__box">
-                  <i class="ri-lock-2-line login__icon"></i>
-
-                  <div class="login__box-input">
-                     <input type="password" name="password" required class="login__input" id="login-pass" placeholder=" ">
-                     <label for="" class="login__label">Password</label>
-                     <i class="ri-eye-off-line login__eye" id="login-eye"></i>
-                  </div>
-               </div>
+            <div class="login__box-input">
+              <input
+                type="name"
+                name="username"
+                required
+                class="login__input"
+                placeholder=" "
+              />
+              <label for="username" class="login__label">Username</label>
             </div>
+          </div>
 
-            <div class="login__check">
-               <div class="login__check-group">
-                  <input type="checkbox" class="login__check-input">
-                  <label for="" class="login__check-label">Remember me</label>
-               </div>
+          <div class="login__box">
+            <i class="ri-lock-2-line login__icon"></i>
 
-               <a href="#" class="login__forgot">Forgot Password?</a>
+            <div class="login__box-input">
+              <input
+                type="password"
+                name="password"
+                required
+                class="login__input"
+                id="login-pass"
+                placeholder=" "
+              />
+              <label for="" class="login__label">Password</label>
+              <i class="ri-eye-off-line login__eye" id="login-eye"></i>
             </div>
+          </div>
+        </div>
 
-            <button type="submit" class="login__button" id="login-button">Login</button>
-            
-            {% if messages %}
-            <ul class="messages">
-              {% for message in messages %}
-                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-              {% endfor %}
-            </ul>
-            {% endif %}
+        <div class="login__check">
+          <div class="login__check-group">
+            <input type="checkbox" class="login__check-input" />
+            <label for="" class="login__check-label">Remember me</label>
+          </div>
 
-            <p class="login__register">
-               Don't have an account? <a href='register'>Register</a>
-            </p>
-         </form>
-      </div>
-      
-      <!--=============== MAIN JS ===============-->
-      <script src="{% static 'js/login.js'%}"></script>
-   </body>
+          <a href="#" class="login__forgot">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="login__button" id="login-button">
+          Login
+        </button>
+
+        {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+          <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+            {{ message }}
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+
+        <p class="login__register">
+          Don't have an account? <a href="register">Register</a>
+        </p>
+      </form>
+    </div>
+    <script>
+      var validUsers = [
+          { username: "LokeshYarramallu", password: "1234" },
+          { username: "LOKESH", password: "1234" },
+      ];
+
+      function validateForm() {
+          var username = document.forms["loginForm"]["username"].value;
+          var password = document.forms["loginForm"]["password"].value;
+
+          if (username === "" || password === "") {
+              alert("Both fields must be filled out");
+              return false;
+          }
+
+          var isValidUser = validUsers.some(function(user) {
+              return user.username === username && user.password === password;
+          });
+
+          if (!isValidUser) {
+              alert("Invalid username or password");
+              return false;
+          }
+
+          return true; 
+      }
+  </script>
+    <!--=============== MAIN JS ===============-->
+    <script src="{% static 'js/login.js'%}"></script>
+  </body>
 </html>

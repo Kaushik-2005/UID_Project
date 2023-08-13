@@ -77,36 +77,50 @@
          </form>
       </div>
       
+
+      <script>
+         document.addEventListener("DOMContentLoaded", function() {
+             const form = document.querySelector(".login__form");
+             const usernameInput = document.querySelector('input[name="username"]');
+             const emailInput = document.querySelector('input[name="email"]');
+             const password1Input = document.querySelector('input[name="password1"]');
+             const password2Input = document.querySelector('input[name="password2"]');
+             const emailError = document.getElementById("emailError");
+ 
+             form.addEventListener("submit", function(event) {
+                 let isValid = true;
+                 emailError.textContent = ""; // Clear previous error message
+ 
+                 // Username validation
+                 if (usernameInput.value.trim() === "") {
+                     isValid = false;
+                     alert("Username is required");
+                 }
+ 
+                 // Email validation
+                 const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                 if (!emailInput.value.match(emailPattern)) {
+                     isValid = false;
+                     emailError.textContent = "Please enter a valid email address";
+                 }
+ 
+                 // Password validation
+                 if (password1Input.value.trim() === "" || password2Input.value.trim() === "") {
+                     isValid = false;
+                     alert("Both password fields are required");
+                 } else if (password1Input.value !== password2Input.value) {
+                     isValid = false;
+                     alert("Passwords do not match");
+                 }
+ 
+                 if (!isValid) {
+                     event.preventDefault(); // Prevent form submission
+                 }
+             });
+         });
+     </script>
       <!--=============== MAIN JS ===============-->
       <script src="{% static 'js/register.js' %}"></script>
-      <script>
-         function validateForm(event) {
-             event.preventDefault(); // Prevent form submission
- 
-             // Clear previous error message
-             document.getElementById("emailError").textContent = "";
- 
-             // Get form input value
-             let email = document.getElementById("email").value;
- 
-             // Validate email
-             if (email === "") {
-                 document.getElementById("emailError").textContent = "Email is required";
-                 return false;
-             } else if (!isValidEmail(email)) {
-                 document.getElementById("emailError").textContent = "Invalid email format";
-                 return false;
-             }
- 
-             // Form is valid, submit it
-             document.getElementById("myForm").submit();
-         }
- 
-         function isValidEmail(email) {
-             // Regular expression for email validation
-             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-             return emailRegex.test(email);
-         }
-     </script>
+
    </body>
 </html>

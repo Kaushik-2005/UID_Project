@@ -1,5 +1,3 @@
-
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +24,12 @@
         class="login__img"
       />
       <div class="registration_form">
-        <form action="/index" method="post"  enctype="multipart/form-data">
+        <form
+          name="registration"
+          action="/index"
+          method="post"
+          enctype="multipart/form-data"
+        >
           {% csrf_token %}
           <div class="form_wrap">
             <div class="input_grp">
@@ -36,7 +39,7 @@
               </div>
               <div class="input_wrap">
                 <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="doclname"/>
+                <input type="text" id="lname" name="doclname" />
               </div>
             </div>
             <div class="input_wrap">
@@ -46,7 +49,7 @@
 
             <div class="input_wrap">
               <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone"/>
+              <input type="tel" id="phone" name="phone" />
             </div>
 
             <div class="input_wrap">
@@ -64,7 +67,9 @@
             </div>
 
             <div class="input_wrap">
-              <label for="description">Expertise (Sub Designation in your field) </label>
+              <label for="description"
+                >Expertise (Sub Designation in your field)
+              </label>
               <textarea
                 id="description"
                 name="expertise"
@@ -74,17 +79,12 @@
             </div>
             <div class="input_wrap">
               <label for="bio">Education and Practice</label>
-              <textarea
-                id="bio"
-                name="education"
-                rows="4"
-                cols="40"
-              ></textarea>
+              <textarea id="bio" name="education" rows="4" cols="40"></textarea>
             </div>
 
             <div class="input_wrap">
               <label for="location">Location of Practice</label>
-              <input type="text" id="location" name="location"/>
+              <input type="text" id="location" name="location" />
             </div>
 
             <div class="input_wrap">
@@ -96,7 +96,9 @@
             {% if messages %}
             <ul class="messages">
               {% for message in messages %}
-                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+              <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                {{ message }}
+              </li>
               {% endfor %}
             </ul>
             {% endif %}
@@ -108,5 +110,82 @@
         </form>
       </div>
     </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const registrationForm = document.forms["registration"];
+        registrationForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+          if (validateForm()) {
+            registrationForm.submit();
+          }
+        });
+
+        function validateForm() {
+          const firstName = registrationForm.elements["docname"].value.trim();
+          const lastName = registrationForm.elements["doclname"].value.trim();
+          const email = registrationForm.elements["email"].value.trim();
+          const phone = registrationForm.elements["phone"].value.trim();
+          const expertise = registrationForm.elements["expertise"].value.trim();
+          const education = registrationForm.elements["education"].value.trim();
+          const location = registrationForm.elements["location"].value.trim();
+          const image = registrationForm.elements["image"].value.trim();
+
+          let isValid = true;
+
+          // Basic validation for required fields
+          if (!firstName) {
+            isValid = false;
+            alert("Please enter your first name.");
+          }
+
+          if (!lastName) {
+            isValid = false;
+            alert("Please enter your last name.");
+          }
+
+          if (!email) {
+            isValid = false;
+            alert("Please enter your email address.");
+          } else if (!isValidEmail(email)) {
+            isValid = false;
+            alert("Please enter a valid email address.");
+          }
+
+          if (!phone) {
+            isValid = false;
+            alert("Please enter your phone number.");
+          }
+
+          if (!expertise) {
+            isValid = false;
+            alert("Please enter your expertise.");
+          }
+
+          if (!education) {
+            isValid = false;
+            alert("Please enter your education and practice details.");
+          }
+
+          if (!location) {
+            isValid = false;
+            alert("Please enter your location of practice.");
+          }
+
+          if (!image) {
+            isValid = false;
+            alert("Please choose an image.");
+          }
+
+          return isValid;
+        }
+
+        function isValidEmail(email) {
+          // Basic email validation
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emailPattern.test(email);
+        }
+      });
+    </script>
   </body>
 </html>

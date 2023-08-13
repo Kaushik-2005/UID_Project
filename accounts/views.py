@@ -49,7 +49,7 @@ def verify(request):
                 return redirect('login')
             return redirect('register')
         else:
-            print('Passwords do not match!')
+            messages.info(request,'password donot match..!')
             return redirect('register')
         
     else: 
