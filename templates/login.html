@@ -31,8 +31,8 @@
       />
 
       <form
-      name="loginForm"
-       onsubmit="return validateForm()"
+        name="loginForm"
+        onsubmit="return validateForm()"
         action="login"
         class="login__form"
         method="post"
@@ -103,33 +103,6 @@
         </p>
       </form>
     </div>
-    <script>
-      var validUsers = [
-          { username: "LokeshYarramallu", password: "1234" },
-          { username: "LOKESH", password: "1234" },
-      ];
-
-      function validateForm() {
-          var username = document.forms["loginForm"]["username"].value;
-          var password = document.forms["loginForm"]["password"].value;
-
-          if (username === "" || password === "") {
-              alert("Both fields must be filled out");
-              return false;
-          }
-
-          var isValidUser = validUsers.some(function(user) {
-              return user.username === username && user.password === password;
-          });
-
-          if (!isValidUser) {
-              alert("Invalid username or password");
-              return false;
-          }
-
-          return true; 
-      }
-  </script>
     <!--=============== MAIN JS ===============-->
     <script src="{% static 'js/login.js'%}"></script>
   </body>
