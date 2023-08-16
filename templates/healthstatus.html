@@ -47,105 +47,97 @@
       </div>
 
       <!-- <div class="page"> -->
-        <div class="info">
-          <h1 style="text-align: center">Case-No:17B3C9X7</h1>
+      <div class="info">
+        <h1 style="text-align: center">Case-No:17B3C9X7</h1>
 
+        <div class="container">
+          <div id="diag">
+            <h2>Diagnosis</h2>
+            <p style="font-size: large">Bardycardia</p>
+            <img
+              id="bm"
+              src="{% static 'img/bard.png' %}"
+              alt="Bardycardia Disease"
+            />
+          </div>
+          <div id="oxygen">
+            <h2>Oxygen</h2>
+            <p style="font-size: large">Last Visit</p>
+            <p id="rb">93%</p>
+          </div>
+        </div>
+
+        <div class="container">
+          <div id="rbc">
+            <h2>Red Blood Cells</h2>
+            <p id="rb">137</p>
+            <p id="mm">mmol/L</p>
+          </div>
+          <div id="pressure">
+            <h2>Pressure</h2>
+            <p id="rb">100/64</p>
+            <p id="mm">mmHg</p>
+          </div>
+        </div>
+
+        <div class="container">
+          <div id="mri">
+            <h2>Heart MRI</h2>
+            <img id="hm" src="{% static 'img/heart.jpeg' %}" />
+          </div>
+          <div id="medi">
+            <h2>Medication</h2>
+            <p id="mm"><b>Metformin</b></p>
+            <p id="mm">150 mg</p>
+          </div>
+        </div>
+      </div>
+      <div class="image">
+        <img src="{% static 'img/h2.jpg' %}" alt="human" />
+        <div class="box-1">
+          <h2>Cardio Vascular</h2>
+          <p id="rb">Aortic Dissection</p>
+          <p id="mm">STAGE-3</p>
+        </div>
+
+        <div class="box-2">
+          <h2>Alfred J.P</h2>
+          <p id="mm">Male,74</p>
+          <button id="hist">Full History</button>
+        </div>
+        <div class="box-3">
+          <p id="mmm">Action Plan</p>
           <div class="container">
-            <div id="diag">
-              <h2>Diagnosis</h2>
-              <p style="font-size: large">Bardycardia</p>
+            <div id="hist1">
+              Cardiograph
               <img
-                id="bm"
-                src="{% static 'img/bard.png' %}"
+                id="bmx"
+                src="{% static 'img/2JL7.gif' %}"
                 alt="Bardycardia Disease"
               />
+              Heart beat is stable
             </div>
-            <div id="oxygen">
-              <h2>Oxygen</h2>
-              <p style="font-size: large">Last Visit</p>
-              <p id="rb">93%</p>
-            </div>
+            <div id="hist1">Blood Test results are fine</div>
           </div>
-
           <div class="container">
-            <div id="rbc">
-              <h2>Red Blood Cells</h2>
-              <p id="rb">137</p>
-              <p id="mm">mmol/L</p>
+            <div id="hist2">
+              Valocordin
+              <button id="plusVal">+</button>
+              <p id="buttVal">150</p>
+              <p id="mm">mg</p>
+              <button id="minusVal">-</button>
             </div>
-            <div id="pressure">
-              <h2>Pressure</h2>
-              <p id="rb">100/64</p>
-              <p id="mm">mmHg</p>
-            </div>
-          </div>
-
-          <div class="container">
-            <div id="mri">
-              <h2>Heart MRI</h2>
-              <img id="hm" src="{% static 'img/heart.jpeg' %}" />
-            </div>
-            <div id="medi">
-              <h2>Medication</h2>
-              <p id="mm"><b>Metformin</b></p>
-              <p id="mm">150 mg</p>
+            <div id="hist2">
+              Merformin
+              <button id="plusMet">+</button>
+              <p id="buttMet">100</p>
+              <p id="mm">mg</p>
+              <button id="minusMet">-</button>
             </div>
           </div>
+          <button id="hists">Submit Documents</button>
         </div>
-        <div class="image">
-          <img src="{% static 'img/h2.jpg' %}" alt="human" />
-          <div class="box-1">
-            <h2>Cardio Vascular</h2>
-            <p id="rb">Aortic Dissection</p>
-            <p id="mm">STAGE-3</p>
-          </div>
-
-          <div class="box-2">
-            <h2>Alfred J.P</h2>
-            <p id="mm">Male,74</p>
-            <button id="hist">Full History</button>
-          </div>
-          <div class="box-3">
-            <p id="mmm">Action Plan</p>
-            <div class="container">
-              <div id="hist1">
-                Cardiograph
-                <img
-                  id="bmx"
-                  src="{% static 'img/2JL7.gif' %}"
-                  alt="Bardycardia Disease"
-                />
-                Heart beat is stable
-              </div>
-              <div id="hist1">
-                Blood Test
-                <img
-                  id="bmx"
-                  src="{% static 'img/blood.jpg' %}"
-                  alt="Bardycardia Disease"
-                />
-                results are fine
-              </div>
-            </div>
-            <div class="container">
-              <div id="hist2">
-                Valocordin
-                <button id="plusVal">+</button>
-                <p id="buttVal">150</p>
-                <p id="mm">mg</p>
-                <button id="minusVal">-</button>
-              </div>
-              <div id="hist2">
-                Merformin
-                <button id="plusMet">+</button>
-                <p id="buttMet">100</p>
-                <p id="mm">mg</p>
-                <button id="minusMet">-</button>
-              </div>
-            </div>
-            <button id="hists">Submit Documents</button>
-          </div>
-        </div>
+      </div>
       <!-- </div>  -->
     </div>
   </body>
