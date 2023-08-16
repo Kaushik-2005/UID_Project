@@ -18,9 +18,9 @@
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
 
   --font-regular: 400;
   --font-medium: 500;
@@ -39,8 +39,8 @@
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
-    --small-font-size: .875rem;
-    --smaller-font-size: .813rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
   }
 }
 
@@ -75,7 +75,10 @@ button {
   border: none;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   color: var(--title-color);
   font-weight: var(--font-medium);
 }
@@ -109,7 +112,7 @@ svg {
   padding-block: 5rem 2rem;
 }
 
-.section__title, 
+.section__title,
 .section__subtitle {
   text-align: center;
   color: var(--title-color);
@@ -123,7 +126,7 @@ svg {
 
 .section__subtitle {
   font-size: var(--small-font-size);
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
 }
 
 .section__subtitle span {
@@ -135,41 +138,41 @@ svg {
 }
 
 /*=============== HEADER & NAV ===============*/
-.header{
+.header {
   position: fixed;
   width: 100%;
   background-color: var(--container-color);
   top: 0;
   left: 0;
-  z-index: var(--z-fixed); 
+  z-index: var(--z-fixed);
 }
 
-.nav{
+.nav {
   height: var(--header-height);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.nav__logo{
+.nav__logo {
   color: var(--title-color);
   font-weight: var(--font-medium);
 }
 
-.nav__logo span{
+.nav__logo span {
   color: var(--first-color);
 }
 
 .nav__toggle,
-.nav__close{
+.nav__close {
   display: flex;
   font-size: 1.25rem;
   color: var(--title-color);
   cursor: pointer;
 }
 /* Navigation for mobile devices */
-@media screen and (max-width: 1023px){
-  .nav__menu{
+@media screen and (max-width: 1023px) {
+  .nav__menu {
     position: fixed;
     top: 0;
     right: -100%;
@@ -183,109 +186,108 @@ svg {
   }
 }
 
-.nav__list{
+.nav__list {
   display: flex;
   flex-direction: column;
   row-gap: 3rem;
 }
 
-.nav__link{
+.nav__link {
   color: var(--title-color);
   font-weight: var(--font-medium);
   transition: color 0.4s;
 }
 
-.nav__link{
+.nav__link {
   color: var(--first-color);
 }
 
-.nav__link:hover{
+.nav__link:hover {
   color: antiquewhite;
 }
 
-.nav__close{
+.nav__close {
   position: absolute;
   top: 1rem;
   right: 1.5rem;
 }
 /* Show menu */
-.show-menu{
+.show-menu {
   right: 0;
 }
 
 /* Add blur to header */
 .blur {
-  backdrop-filter: blur(10px); 
+  backdrop-filter: blur(10px);
 }
 /* Active link */
-.active-link{
+.active-link {
   color: var(--first-color);
-
 }
 
 /*=============== HOME ===============*/
-.home{
+.home {
   background-color: var(--container-color);
 }
 
-.home__container{
+.home__container {
   padding-top: 2rem;
   row-gap: 2.5rem;
 }
 
-.home__content{
+.home__content {
   display: grid;
   row-gap: 2rem;
 }
 
-.home__data{
+.home__data {
   text-align: center;
 }
 
-.home__subtitle{
+.home__subtitle {
   font-size: var(--bigger-font-size);
 }
 
 .home__subtitle span,
-.home__title{
+.home__title {
   color: var(--first-color);
 }
 
-.home__title{
+.home__title {
   font-size: var(--biggest-font-size);
   font-weight: var(--font-semi-bold);
 }
 
-.home_description{
+.home_description {
   margin-block: 1rem 1.5rem;
 }
 
-.home__social{
+.home__social {
   display: flex;
   justify-content: center;
   column-gap: 1.25rem;
 }
 
-.home__social-link{
+.home__social-link {
   display: flex;
   background-color: var(--first-color-alt);
   padding: 0.5rem;
   color: var(--title-color);
   font-size: 1.5rem;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  transition: transform .4s;
+  transition: transform 0.4s;
 }
 
-.home__social-link:hover{
+.home__social-link:hover {
   transform: translateY(-0.25rem);
 }
 
-.home__image{
+.home__image {
   overflow: hidden;
   justify-self: center;
 }
 
-.home__blob{
+.home__blob {
   overflow: hidden;
   width: 320px;
   fill: var(--first-color);
@@ -293,7 +295,7 @@ svg {
 }
 
 /*=============== BUTTON ===============*/
-.button{
+.button {
   display: inline-block;
   background-color: var(--first-color);
   padding: 1rem 1.75rem;
@@ -303,39 +305,38 @@ svg {
   transition: box-shadow 0.4s;
 }
 
-.button:hover{
+.button:hover {
   box-shadow: 0 8px 24px hsla(var(--hue), 100%, 40%, 0.25);
 }
 
 /*=============== ABOUT ===============*/
-.about__container{
+.about__container {
   row-gap: 2.5rem;
-
 }
 
-.about__data{
+.about__data {
   text-align: center;
 }
 
-.about__description{
+.about__description {
   margin-bottom: 2rem;
 }
 
-.about__image{
+.about__image {
   justify-self: center;
 }
 
-.about__blob{
+.about__blob {
   width: 320px;
   fill: var(--first-color);
 }
 /*=============== SERVICES ===============*/
-.services__container{
+.services__container {
   row-gap: 2rem;
   padding-block: 1rem;
 }
 
-.services__card{
+.services__card {
   color: aliceblue;
   text-align: center;
   background-color: var(--container-color);
@@ -345,53 +346,51 @@ svg {
   transition: border 0.4s;
 }
 
-.services__icon{
+.services__icon {
   display: block;
   font-size: 4rem;
   color: var(--first-color);
   margin-bottom: 0.75rem;
 }
 
-.services__title{
+.services__title {
   color: var(--first-color);
   font-size: var(--h2-font-size);
   margin-bottom: 1.5rem;
 }
 
-.services__card:hover{
+.services__card:hover {
   border: 2px solid var(--first-color);
 }
 /*=============== doctorS ===============*/
-.doctors{
+.doctors {
   background-color: var(--container-color);
 }
 
-.doctors__container{
+.doctors__container {
   row-gap: 2rem;
   justify-content: center;
   padding-block: 1rem;
 }
 
-.doctors__card{
+.doctors__card {
   position: relative;
   border-radius: 1rem;
   overflow: hidden;
 }
 
-.doctors__img{
+.doctors__img {
   width: 100%;
   height: 100%;
 }
 
-.doctors__modal{
+.doctors__modal {
   position: absolute;
   left: 0;
   bottom: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg,
-              hsla(0, 0%, 0%, 0) 0%,
-              black 120%);
+  background: linear-gradient(180deg, hsla(0, 0%, 0%, 0) 0%, black 120%);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 1rem;
@@ -402,73 +401,73 @@ svg {
   transition: bottom 0.4s;
 }
 
-.doctors__button{
+.doctors__button {
   color: var(--title-color);
   font-size: var(--small-font-size);
 }
 
-.doctors__title{
+.doctors__title {
   color: antiquewhite;
   font-size: var(--h2-font-size);
   margin-bottom: 0.75rem;
 }
 
-.doctors__button{
+.doctors__button {
   display: flex;
   align-items: center;
   column-gap: 0.5rem;
   font-weight: var(--font-medium);
 }
 
-.doctors__card a{
+.doctors__card a {
   color: antiquewhite;
 }
 
-.doctors__button i{
+.doctors__button i {
   font-size: 1.25rem;
 }
 
-.doctors__card:hover .doctors__modal{
+.doctors__card:hover .doctors__modal {
   bottom: 0;
 }
 /*=============== CONTACT ===============*/
-.contact__container{
+.contact__container {
   padding-top: 1rem;
 }
 
 .contact__form,
-.contact__group{
+.contact__group {
   display: grid;
   row-gap: 1rem;
 }
 
-.contact__form{
+.contact__form {
   position: relative;
 }
 
-.contact__input{
+.contact__input {
   padding: 1rem 1.25rem;
   border-radius: 0.5rem;
   background-color: var(--container-color);
   color: var(--title-color);
 }
 
-.contact__input::placeholder{
+.contact__input::placeholder {
   color: var(--text-color);
 }
 
-.contact__form textarea{
+.contact__form textarea {
   height: 11rem;
   resize: none;
   margin-bottom: 2rem;
 }
 
-.contact__button{
+.contact__button {
   justify-self: center;
   cursor: pointer;
 }
 
-.contact__message{
+.contact__message {
   position: absolute;
   left: 0;
   bottom: 4.5rem;
@@ -476,37 +475,37 @@ svg {
   color: var(--title-color);
 }
 /*=============== FOOTER ===============*/
-.footer{
+.footer {
   background-color: var(--container-color);
   padding-block: 3.5rem 2rem;
 }
 
-.footer__container{
+.footer__container {
   row-gap: 2rem;
   text-align: center;
 }
 
-.footer__title{
+.footer__title {
   font-size: var(--h1-font-size);
   font-weight: var(--font-semi-bold);
   margin-bottom: 0.25rem;
 }
 
-.footer__title span{
+.footer__title span {
   color: var(--first-color);
 }
 
-.footer__description{
+.footer__description {
   font-size: var(--normal-font-size);
 }
 
-.footer__social{
+.footer__social {
   display: flex;
   justify-content: center;
   column-gap: 1.25rem;
 }
 
-.footer__social-link{
+.footer__social-link {
   display: flex;
   background-color: var(--first-color-alt);
   padding: 0.5rem;
@@ -516,34 +515,34 @@ svg {
   transition: transform 0.4s;
 }
 
-.footer__social-link:hover{
+.footer__social-link:hover {
   transform: translateY(-0.25rem);
 }
 
-.footer__copy{
+.footer__copy {
   font-size: var(--smaller-font-size);
   margin-top: 2rem;
 }
 /*=============== SCROLL BAR ===============*/
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 0.6rem;
   border-radius: 0.5rem;
   background-color: hsl(228, 12%, 25%);
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background-color: hsl(228, 8%, 35%);
   border-radius: 0.5rem;
 }
 
-::-webkit-scrollbar-thumb:hover{
+::-webkit-scrollbar-thumb:hover {
   background-color: hsl(228, 8%, 45%);
 }
 
 /*=============== SCROLL UP ===============*/
-.scrollup{
+.scrollup {
   position: fixed;
-  right: 1rem; 
+  right: 1rem;
   bottom: -50%;
   background-color: var(--body-color);
   padding: 6px;
@@ -553,215 +552,215 @@ svg {
   font-size: 1.25rem;
   box-shadow: 0 4px 12px hsla(228, 15%, 8%, 0.4);
   z-index: var(--z-tooltip);
-  transition: button .4s, transform .4s;
+  transition: button 0.4s, transform 0.4s;
 }
 
-.scrollup:hover{
+.scrollup:hover {
   transform: translateY(-0.25rem);
 }
 /* Show Scroll Up */
-.show-scroll{
+.show-scroll {
   bottom: 0;
 }
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (max-width: 320px){
-  .container{
+@media screen and (max-width: 320px) {
+  .container {
     margin-inline: 1rem;
   }
 
-  .services__card{
+  .services__card {
     padding-block: 1.5rem;
   }
 }
 /* For medium devices */
-@media screen and (min-width: 576px){
+@media screen and (min-width: 576px) {
   .home__container,
   .about__container,
   .services__container,
   .doctors__container,
-  .contact__container{
+  .contact__container {
     grid-template-columns: 360px;
     justify-content: center;
   }
 }
 
-@media screen and (min-width: 768px){
-  .nav__menu{
+@media screen and (min-width: 768px) {
+  .nav__menu {
     width: 50%;
   }
 
   .home__container,
-  .about__container{
+  .about__container {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
   }
 
   .home__data,
   .about__data,
-  ::is(.about__data) :is(.section__subtitle, .section__title){
+  ::is(.about__data) :is(.section__subtitle, .section__title) {
     text-align: initial;
   }
 
-  .home__social{
+  .home__social {
     justify-content: center;
   }
 
   .home__blob,
-  .about__blob{
+  .about__blob {
     width: 400px;
   }
 
-  .about__data{
+  .about__data {
     order: 1;
   }
 
   .services__container,
-  .doctors__container{
+  .doctors__container {
     grid-template-columns: repeat(2, 352px);
   }
 }
 /* For large devices */
-@media screen and (min-width: 1023px){
-  .section{
+@media screen and (min-width: 1023px) {
+  .section {
     padding-block: 7rem 2rem;
   }
 
-  .section__subtitle{
+  .section__subtitle {
     font-size: var(--normal-font-size);
   }
 
-  .nav{
+  .nav {
     height: calc(var(--header-height) + 1.5rem);
   }
 
   .nav__close,
-  .nav__toggle{
+  .nav__toggle {
     display: none;
   }
 
-  .nav__list{
+  .nav__list {
     flex-direction: row;
     column-gap: 3rem;
   }
 
-  .nav__menu{
+  .nav__menu {
     width: initial;
   }
 
-  .blur-header::after{
+  .blur-header::after {
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
   }
 }
 
-@media screen and (min-width: 1152px){
-  .container{
+@media screen and (min-width: 1152px) {
+  .container {
     margin-inline: auto;
   }
 
-  .home__container{
+  .home__container {
     grid-template-columns: 455px 550px;
     column-gap: 7rem;
     padding-block: 2rem 3rem;
   }
 
-  .home__blob{
+  .home__blob {
     width: 550px;
   }
 
-  .home__content{
+  .home__content {
     row-gap: 2.5rem;
   }
 
-  .home_description{
+  .home_description {
     margin-block: 1.5rem 2.5rem;
   }
 
-  .home__social{
+  .home__social {
     column-gap: 1.5rem;
   }
 
-  .about__container{
+  .about__container {
     grid-template-columns: 550px 460px;
     column-gap: 4.5rem;
     padding-bottom: 1rem;
   }
 
-  .about__blob{
+  .about__blob {
     width: 550px;
   }
 
-  .about__description{
+  .about__description {
     margin-bottom: 3rem;
   }
 
-  .services__container{
+  .services__container {
     grid-template-columns: repeat(3, 352px);
     padding-block: 2.5rem 4rem;
   }
 
-  .services__card{
+  .services__card {
     padding: 3.5rem 2rem;
   }
 
-  .doctors__container{
+  .doctors__container {
     grid-template-columns: repeat(3, 350px);
     row-gap: 3rem;
     padding-block: 2.5rem 4rem;
   }
 
-  .doctors__button{
+  .doctors__button {
     font-size: var(--normal-font-size);
   }
 
-  .contact__container{
+  .contact__container {
     grid-template-columns: 680px;
     padding-block: 2.5rem 4rem;
   }
 
-  .contact__form{
+  .contact__form {
     row-gap: 1.5rem;
   }
 
-  .contact__group{
+  .contact__group {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1.5rem;
   }
 
-  .contact__input{
+  .contact__input {
     padding: 1.5rem;
   }
 
-  .contact__form textarea{
+  .contact__form textarea {
     height: 20rem;
   }
 
-  .footer{
+  .footer {
     padding-block: 4.5rem 4rem;
   }
 
-  .footer__container{
+  .footer__container {
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     text-align: initial;
   }
-  
-  .footer__title{
+
+  .footer__title {
     font-size: var(--bigger-font-size);
   }
 
-  .footer__social{
+  .footer__social {
     column-gap: 1.5rem;
   }
 
-  .footer__copy{
+  .footer__copy {
     margin: 0;
     justify-self: flex-end;
   }
 
-  .scrollup{
+  .scrollup {
     right: 3rem;
   }
 }

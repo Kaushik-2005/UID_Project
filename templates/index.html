@@ -285,7 +285,7 @@
                <a href="https://lokeshyarramallu.github.io/LOKESH/" target="_blank" class="footer__social-link" rel="noopener">
                   <i class="ri-user-3-line"></i>
                </a>
-               <a href="https://github.com/LokeshYarramallu" target="_blank" class="footer__social-link" rel="noopener"> 
+               <a href="https://github.com/Kaushik-2005" target="_blank" class="footer__social-link" rel="noopener"> 
                   <i class="ri-user-2-line"></i>
                </a>
 
@@ -301,6 +301,28 @@
          <i class="ri-arrow-up-line"></i>
       </a>
       
+      <script>
+         const form = document.getElementById('contact-form');
+         const emailInput = form.querySelector('input[name="email"]');
+         const errorMessage = document.getElementById('contact-message');
+   
+         form.addEventListener('submit', function(event) {
+            if (!isValidEmail(emailInput.value)) {
+               event.preventDefault();
+               errorMessage.textContent = 'Please enter a valid email address.';
+               errorMessage.style.color = 'red';
+            } else {
+               errorMessage.textContent = '';
+               errorMessage.style.color = '';
+            }
+         });
+   
+         function isValidEmail(email) {
+            // Basic email validation using a regular expression
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            return emailRegex.test(email);
+         }
+      </script>
       <!-- <script src="https://kit.fontawesome.com/ca6315cbad.js" crossorigin="anonymous"></script> -->
       <script src="{% static 'js/scrollreveal.min.js' %}"></script>
       <script src="http://cdn.jsdelvir.net/npm/@emailjs/browser@3/dist/email.min.js' %}"></script>
